@@ -2387,5 +2387,5 @@ if __name__ == "__main__":
             url = server_name 
         else:
             url = "http://" + server_name 
-        webbrowser.open(url + ":" + str(server_port), new = 0, autoraise = True)
-    demo.launch(server_name=server_name, server_port=server_port, share=args.share, allowed_paths=[save_path])
+        # webbrowser.open(url + ":" + str(server_port), new = 0, autoraise = True)
+    demo.launch(share=True,debug=True)
