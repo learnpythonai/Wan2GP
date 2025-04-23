@@ -1,10 +1,10 @@
 import os
 import torch
 from torch.nn import functional as F
-# from model.pytorch_msssim import ssim_matlab
-from ssim import ssim_matlab
+# from .model.pytorch_msssim import ssim_matlab
+from .ssim import ssim_matlab
 
-from RIFE_HDv3 import Model
+from .RIFE_HDv3 import Model
 
 def get_frame(frames, frame_no):
     if frame_no >= frames.shape[1]:

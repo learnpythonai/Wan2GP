@@ -5,8 +5,8 @@ import torch
 import torch.nn as nn
 from group_modules import GConv2d
 from tensor_utils import aggregate
-from positional_encoding import PositionalEncoding
-from transformer_layers import CrossAttention, SelfAttention, FFN, PixelFFN
+from .positional_encoding import PositionalEncoding
+from .transformer_layers import CrossAttention, SelfAttention, FFN, PixelFFN
 
 
 class QueryTransformerBlock(nn.Module):

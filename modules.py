@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from group_modules import MainToGroupDistributor, GroupResBlock, upsample_groups, GConv2d, downsample_groups
+from .group_modules import MainToGroupDistributor, GroupResBlock, upsample_groups, GConv2d, downsample_groups
 
 
 class UpsampleBlock(nn.Module):

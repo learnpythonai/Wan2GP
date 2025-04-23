@@ -13,7 +13,7 @@ from painter import mask_painter
 from interact_tools import SamControler
 
 from inference_core import InferenceCore
-from matanyone_wrapper import matanyone
+from .matanyone_wrapper import matanyone
 
 arg_device = "cuda"
 arg_sam_model_type="vit_h"
@@ -427,7 +427,7 @@ def load_unload_models(selected):
             with torch.cuda.stream(transfer_stream):
                 # initialize sams
                 model = MaskGenerator(sam_checkpoint, arg_device)
-                from matanyone.model.matanyone import MatAnyone
+                from .matanyone.model.matanyone import MatAnyone
                 matanyone_model = MatAnyone.from_pretrained("PeiqingYang/MatAnyone")
                 # pipe ={"mat" : matanyone_model, "sam" :model.samcontroler.sam_controler.model }
                 # offload.profile(pipe)

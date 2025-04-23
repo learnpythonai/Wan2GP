@@ -43,7 +43,7 @@ def resize_image_ori(h, w, image, k):
 
 class DepthAnnotator:
     def __init__(self, cfg, device=None):
-        from api import MiDaSInference
+        from .api import MiDaSInference
         pretrained_model = cfg['PRETRAINED_MODEL']
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu") if device is None else device
         self.model = MiDaSInference(model_type='dpt_hybrid', model_path=pretrained_model).to(self.device)

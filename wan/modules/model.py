@@ -9,7 +9,7 @@ from diffusers.models.modeling_utils import ModelMixin
 import numpy as np
 from typing import Union,Optional
 from mmgp import offload
-from attention import pay_attention
+from .attention import pay_attention
 
 __all__ = ['WanModel']
 

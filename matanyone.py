@@ -7,8 +7,8 @@ import torch.nn.functional as F
 from omegaconf import OmegaConf
 from huggingface_hub import PyTorchModelHubMixin
 
-from big_modules import PixelEncoder, UncertPred, KeyProjection, MaskEncoder, PixelFeatureFuser, MaskDecoder
-from aux_modules import AuxComputer
+from .big_modules import PixelEncoder, UncertPred, KeyProjection, MaskEncoder, PixelFeatureFuser, MaskDecoder
+from .aux_modules import AuxComputer
 from memory_utils import get_affinity, readout
 from object_transformer import QueryTransformer
 from object_summarizer import ObjectSummarizer

@@ -14,9 +14,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from group_modules import MainToGroupDistributor, GroupFeatureFusionBlock, GConv2d
+from .group_modules import MainToGroupDistributor, GroupFeatureFusionBlock, GConv2d
 import resnet
-from modules import SensoryDeepUpdater, SensoryUpdater_fullscale, DecoderFeatureProcessor, MaskUpsampleBlock
+from .modules import SensoryDeepUpdater, SensoryUpdater_fullscale, DecoderFeatureProcessor, MaskUpsampleBlock
 
 class UncertPred(nn.Module):
     def __init__(self, model_cfg: DictConfig):

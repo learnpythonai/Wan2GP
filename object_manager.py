@@ -1,7 +1,7 @@
 from typing import Union, List, Dict
 
 import torch
-from object_info import ObjectInfo
+from .object_info import ObjectInfo
 
 
 class ObjectManager:
