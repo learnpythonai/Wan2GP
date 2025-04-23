@@ -3,10 +3,10 @@ from omegaconf import DictConfig
 from typing import List, Dict
 import torch
 
-from .object_manager import ObjectManager
-from .kv_memory_store import KeyValueMemoryStore
+from object_manager import ObjectManager
+from kv_memory_store import KeyValueMemoryStore
 from matanyone import MatAnyone
-from ..model.utils.memory_utils import get_similarity, do_softmax
+from memory_utils import get_similarity, do_softmax
 
 log = logging.getLogger()
 
