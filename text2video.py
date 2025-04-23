@@ -12,11 +12,11 @@ import torch.nn.functional as F
 from model import WanModel
 from t5 import T5EncoderModel
 from vae import WanVAE
-from wan.fm_solvers import (FlowDPMSolverMultistepScheduler,
-                            get_sampling_sigmas, retrieve_timesteps)
-from wan.fm_solvers_unipc import FlowUniPCMultistepScheduler
+from utils.fm_solvers import (FlowDPMSolverMultistepScheduler,
+                               get_sampling_sigmas, retrieve_timesteps)
+from utils.fm_solvers_unipc import FlowUniPCMultistepScheduler
 from posemb_layers import get_rotary_pos_embed
-from wan.vace_preprocessor import VaceVideoProcessor
+from utils.vace_preprocessor import VaceVideoProcessor
 
 
 def optimized_scale(positive_flat, negative_flat):
@@ -346,7 +346,7 @@ class WanT2V:
             source_latents = self.vae.encode([source_video]) #.to(dtype=self.dtype, device=self.device)
             del source_video
             # Process target camera (recammaster)
-            from wan.cammmaster_tools import get_camera_embedding
+            from cammmaster_tools import get_camera_embedding
             cam_emb = get_camera_embedding(target_camera)       
             cam_emb = cam_emb.to(dtype=self.dtype, device=self.device)
 

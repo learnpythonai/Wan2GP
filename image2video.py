@@ -16,9 +16,9 @@ from clip import CLIPModel
 from model import WanModel
 from t5 import T5EncoderModel
 from vae import WanVAE
-from wan.fm_solvers import (FlowDPMSolverMultistepScheduler,
-                            get_sampling_sigmas, retrieve_timesteps)
-from wan.fm_solvers_unipc import FlowUniPCMultistepScheduler
+from utils.fm_solvers import (FlowDPMSolverMultistepScheduler,
+                               get_sampling_sigmas, retrieve_timesteps)
+from utils.fm_solvers_unipc import FlowUniPCMultistepScheduler
 from posemb_layers import get_rotary_pos_embed
 from wan.utils import resize_lanczos
 

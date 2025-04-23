@@ -14,15 +14,15 @@ import gradio as gr
 import json
 import wan
 from wan.configs import MAX_AREA_CONFIGS, WAN_CONFIGS, VACE_SIZE_CONFIGS
-from wan.utils.utils import cache_video
-from wan.modules.attention import get_attention_modes, get_supported_attention_modes
+from wan.utils import cache_video
+from attention import get_attention_modes, get_supported_attention_modes
 import torch
 import gc
 import traceback
 import typing
 import asyncio
 import inspect
-from wan.utils import prompt_parser
+from wan import prompt_parser
 import base64
 import io
 from PIL import Image
@@ -88,7 +88,7 @@ def pil_to_base64_uri(pil_image, format="png", quality=75):
         return None
 
     if isinstance(pil_image, str):
-        from wan.utils.utils import get_video_frame
+        from wan.utils import get_video_frame
         pil_image = get_video_frame(pil_image, 0)
 
     buffer = io.BytesIO()
@@ -246,7 +246,7 @@ def process_prompt_and_add_tasks(state, model_choice):
             image_refs = [ convert_image(tup[0]) for tup in image_refs ]
 
             os.environ["U2NET_HOME"] = os.path.join(os.getcwd(), "ckpts", "rembg")
-            from wan.utils.utils import resize_and_remove_background
+            from wan.utils import resize_and_remove_background
             image_refs = resize_and_remove_background(image_refs, width, height, inputs["remove_background_image_ref"] ==1)
         
 
@@ -2150,7 +2150,7 @@ def convert_image(image):
     return cast(Image, ImageOps.exif_transpose(image))
 
 def get_resampled_video(video_in, start_frame, max_frames):
-    from wan.utils.utils import resample
+    from wan.utils import resample
 
     import decord
     decord.bridge.set_bridge('torch')
@@ -2724,7 +2724,7 @@ def generate_video(
                 fps = fps * 2**exp
 
             if len(spatial_upsampling) > 0:
-                from wan.utils.utils import resize_lanczos # need multithreading or to do lanczos with cuda
+                from wan.utils import resize_lanczos # need multithreading or to do lanczos with cuda
                 if spatial_upsampling == "lanczos1.5":
                     scale = 1.5
                 else:

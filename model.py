@@ -2,12 +2,10 @@
 import math
 from einops import rearrange
 import torch
-import torch.cuda.amp as amp
 import torch.nn as nn
 from diffusers.configuration_utils import ConfigMixin, register_to_config
 from diffusers.models.modeling_utils import ModelMixin
 import numpy as np
-from typing import Union,Optional
 from mmgp import offload
 from attention import pay_attention
 
@@ -140,7 +138,7 @@ class WanLayerNorm(nn.LayerNorm):
         return x
         # return super().forward(x).type_as(x)
 
-from wan.modules.posemb_layers import apply_rotary_emb
+from posemb_layers import apply_rotary_emb
 
 class WanSelfAttention(nn.Module):
 
