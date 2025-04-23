@@ -9,8 +9,8 @@ import torch.nn.functional as F
 from .memory_manager import MemoryManager
 from .object_manager import ObjectManager
 from .image_feature_store import ImageFeatureStore
-from ..model.matanyone import MatAnyone
-from ...utils.tensor_utils import pad_divide_by, unpad, aggregate
+from matanyone import MatAnyone
+from tensor_utils import pad_divide_by, unpad, aggregate
 
 log = logging.getLogger()
 

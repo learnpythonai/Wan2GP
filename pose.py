@@ -6,7 +6,7 @@ import os
 import cv2
 import torch
 import numpy as np
-from . import util
+import util
 from .wholebody import Wholebody, HWC3, resize_image
 from PIL import Image
 

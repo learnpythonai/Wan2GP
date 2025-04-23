@@ -6,7 +6,7 @@ import torch
 from torch import Tensor
 import torch.nn as nn
 import torch.nn.functional as F
-from ...model.channel_attn import CAResBlock
+from channel_attn import CAResBlock
 
 
 class SelfAttention(nn.Module):

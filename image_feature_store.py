@@ -1,7 +1,7 @@
 import warnings
 from typing import Iterable
 import torch
-from ..model.matanyone import MatAnyone
+from matanyone import MatAnyone
 
 
 class ImageFeatureStore:

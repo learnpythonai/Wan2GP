@@ -9,10 +9,10 @@ from huggingface_hub import PyTorchModelHubMixin
 
 from .big_modules import PixelEncoder, UncertPred, KeyProjection, MaskEncoder, PixelFeatureFuser, MaskDecoder
 from .aux_modules import AuxComputer
-from .utils.memory_utils import get_affinity, readout
-from .transformer.object_transformer import QueryTransformer
-from .transformer.object_summarizer import ObjectSummarizer
-from ...utils.tensor_utils import aggregate
+from preprocessing.matanyone.matanyone.model.utils.memory_utils import get_affinity, readout
+from object_transformer import QueryTransformer
+from object_summarizer import ObjectSummarizer
+from tensor_utils import aggregate
 
 log = logging.getLogger()
 class MatAnyone(nn.Module,

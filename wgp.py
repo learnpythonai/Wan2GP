@@ -3,7 +3,7 @@ import time
 import sys
 import threading
 import argparse
-from mmgp import offload, safetensors2, profile_type 
+from mmgp import offload, profile_type
 try:
     import triton
 except ImportError:
@@ -11,16 +11,14 @@ except ImportError:
 from pathlib import Path
 from datetime import datetime
 import gradio as gr
-import random
 import json
 import wan
-from wan.configs import MAX_AREA_CONFIGS, WAN_CONFIGS, SUPPORTED_SIZES, VACE_SIZE_CONFIGS
+from wan.configs import MAX_AREA_CONFIGS, WAN_CONFIGS, VACE_SIZE_CONFIGS
 from wan.utils.utils import cache_video
 from wan.modules.attention import get_attention_modes, get_supported_attention_modes
 import torch
 import gc
 import traceback
-import math 
 import typing
 import asyncio
 import inspect
@@ -34,8 +32,6 @@ import atexit
 import shutil
 import glob
 
-from tqdm import tqdm
-import requests
 global_queue_ref = []
 AUTOSAVE_FILENAME = "queue.zip"
 PROMPT_VARS_MAX = 10
@@ -2192,7 +2188,7 @@ def preprocess_video(process_type, height, width, video_in, max_frames, start_fr
         processed_frames_list.append(frame)
 
     if process_type=="pose":
-        from preprocessing.dwpose.pose import PoseBodyFaceVideoAnnotator
+        from pose import PoseBodyFaceVideoAnnotator
         cfg_dict = {
             "DETECTION_MODEL": "ckpts/pose/yolox_l.onnx",
             "POSE_MODEL": "ckpts/pose/dw-ll_ucoco_384.onnx",
@@ -2200,7 +2196,7 @@ def preprocess_video(process_type, height, width, video_in, max_frames, start_fr
         }
         anno_ins = PoseBodyFaceVideoAnnotator(cfg_dict)
     elif process_type=="depth":
-        from preprocessing.midas.depth import DepthVideoAnnotator
+        from depth import DepthVideoAnnotator
         cfg_dict = {
             "PRETRAINED_MODEL": "ckpts/depth/dpt_hybrid-midas-501f0c75.pt"
         }
@@ -4705,7 +4701,7 @@ def create_demo():
             with gr.Tab("Informations", id="info"):
                 generate_info_tab()
             with gr.Tab("Video Mask Creator", id="video_mask_creator") as video_mask_creator:
-                from preprocessing.matanyone  import app as matanyone_app
+                import app as matanyone_app
                 vmc_event_handler = matanyone_app.get_vmc_event_handler()
 
                 matanyone_app.display(main_tabs, model_choice, video_guide, video_mask, video_prompt_type_video_trigger)

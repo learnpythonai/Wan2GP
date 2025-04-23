@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 
 from .group_modules import GConv2d
-from ...utils.tensor_utils import aggregate
+from tensor_utils import aggregate
 
 
 class LinearPredictor(nn.Module):

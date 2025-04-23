@@ -1,24 +1,18 @@
-import sys
-
 import os
 import json
 import time
 import psutil
 # import ffmpeg
 import imageio
-from PIL import Image
 
 import cv2
 import torch
 import numpy as np
 import gradio as gr
-from .tools.painter import mask_painter
-from .tools.interact_tools import SamControler
-from .tools.misc import get_device
-from .tools.download_util import load_file_from_url
+from painter import mask_painter
+from interact_tools import SamControler
 
-from .utils.get_default_model import get_matanyone_model
-from .matanyone.inference.inference_core import InferenceCore
+from inference_core import InferenceCore
 from .matanyone_wrapper import matanyone
 
 arg_device = "cuda"
@@ -425,8 +419,6 @@ def load_unload_models(selected):
                 'vit_b': "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth"
             }
             # os.path.join('.')
-
-            from mmgp import offload
 
             # sam_checkpoint = load_file_from_url(sam_checkpoint_url_dict[arg_sam_model_type], ".")
             sam_checkpoint = None

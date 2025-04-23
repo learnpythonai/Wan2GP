@@ -5,7 +5,7 @@ from omegaconf import open_dict
 from hydra import compose, initialize
 
 import torch
-from ..matanyone.model.matanyone import MatAnyone
+from matanyone import MatAnyone
 
 def get_matanyone_model(ckpt_path, device=None) -> MatAnyone:
     initialize(version_base='1.3.2', config_path="../config", job_name="eval_our_config")

@@ -15,7 +15,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from .group_modules import MainToGroupDistributor, GroupFeatureFusionBlock, GConv2d
-from .utils import resnet
+from preprocessing.matanyone.matanyone.model.utils import resnet
 from .modules import SensoryDeepUpdater, SensoryUpdater_fullscale, DecoderFeatureProcessor, MaskUpsampleBlock
 
 class UncertPred(nn.Module):
