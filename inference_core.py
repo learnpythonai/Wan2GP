@@ -6,9 +6,9 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
-from .memory_manager import MemoryManager
-from .object_manager import ObjectManager
-from .image_feature_store import ImageFeatureStore
+from memory_manager import MemoryManager
+from object_manager import ObjectManager
+from image_feature_store import ImageFeatureStore
 from matanyone import MatAnyone
 from tensor_utils import pad_divide_by, unpad, aggregate
 
