@@ -7,7 +7,7 @@ import cv2
 import torch
 import numpy as np
 import util
-from .wholebody import Wholebody, HWC3, resize_image
+from wholebody import Wholebody, HWC3, resize_image
 from PIL import Image
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"

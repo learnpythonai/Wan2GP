@@ -6,7 +6,7 @@ from xfuser.core.distributed import (get_sequence_parallel_rank,
                                      get_sp_group)
 from xfuser.core.long_ctx_attention import xFuserLongContextAttention
 
-from ..modules.model import sinusoidal_embedding_1d
+from .modules.model import sinusoidal_embedding_1d
 
 
 def pad_freqs(original_tensor, target_len):
