@@ -6,7 +6,7 @@ from omegaconf import DictConfig
 import torch
 import torch.nn as nn
 
-from .group_modules import GConv2d
+from group_modules import GConv2d
 from tensor_utils import aggregate
 
 

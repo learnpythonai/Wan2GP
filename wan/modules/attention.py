@@ -44,7 +44,7 @@ import warnings
 
 try:
     from sageattention import sageattn
-    from .sage2_core import sageattn as alt_sageattn, is_sage2_supported
+    from sage2_core import sageattn as alt_sageattn, is_sage2_supported
     sage2_supported =  is_sage2_supported()
 except ImportError:
     sageattn = None
@@ -77,7 +77,7 @@ def sageattn_wrapper(
 
 # try:
 # if True:
-    # from .sage2_core import sageattn_qk_int8_pv_fp8_window_cuda
+    # from sage2_core import sageattn_qk_int8_pv_fp8_window_cuda
     # @torch.compiler.disable()
     # def sageattn_window_wrapper(
     #         qkv_list,

@@ -4,7 +4,7 @@ from omegaconf import DictConfig
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .positional_encoding import PositionalEncoding
+from positional_encoding import PositionalEncoding
 
 
 # @torch.jit.script

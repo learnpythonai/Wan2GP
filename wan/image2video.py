@@ -16,14 +16,14 @@ import torch.distributed as dist
 import torchvision.transforms.functional as TF
 from tqdm import tqdm
 
-from .distributed.fsdp import shard_model
-from .modules.clip import CLIPModel
-from .modules.model import WanModel
-from .modules.t5 import T5EncoderModel
-from .modules.vae import WanVAE
-from .utils.fm_solvers import (FlowDPMSolverMultistepScheduler,
+from distributed.fsdp import shard_model
+from modules.clip import CLIPModel
+from modules.model import WanModel
+from modules.t5 import T5EncoderModel
+from modules.vae import WanVAE
+from utils.fm_solvers import (FlowDPMSolverMultistepScheduler,
                                get_sampling_sigmas, retrieve_timesteps)
-from .utils.fm_solvers_unipc import FlowUniPCMultistepScheduler
+from utils.fm_solvers_unipc import FlowUniPCMultistepScheduler
 from wan.modules.posemb_layers import get_rotary_pos_embed
 from wan.utils.utils import resize_lanczos
 

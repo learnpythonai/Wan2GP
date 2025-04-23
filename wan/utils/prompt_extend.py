@@ -334,7 +334,7 @@ class QwenPromptExpander(PromptExpander):
             from transformers import (AutoProcessor, AutoTokenizer,
                                       Qwen2_5_VLForConditionalGeneration)
             try:
-                from .qwen_vl_utils import process_vision_info
+                from qwen_vl_utils import process_vision_info
             except:
                 from qwen_vl_utils import process_vision_info
             self.process_vision_info = process_vision_info

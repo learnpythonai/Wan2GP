@@ -5,9 +5,9 @@ from torch.optim import AdamW
 import torch.optim as optim
 import itertools
 from torch.nn.parallel import DistributedDataParallel as DDP
-from .IFNet_HDv3 import *
+from IFNet_HDv3 import *
 import torch.nn.functional as F
-# from ..model.loss import *
+# from .model.loss import *
 
 # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
