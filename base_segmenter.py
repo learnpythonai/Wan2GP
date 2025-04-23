@@ -7,7 +7,7 @@ from typing import Union
 from segment_anything import sam_model_registry, SamPredictor, SamAutomaticMaskGenerator
 import matplotlib.pyplot as plt
 import PIL
-from .mask_painter import mask_painter
+from mask_painter import mask_painter
 
 
 class BaseSegmenter:
